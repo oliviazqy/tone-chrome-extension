@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tone Settings</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #000000;
+      --accent: #4CAF50;
+      --button-text: #ffffff;
+      --status-color: green;
+      --border-color: #e0e0e0;
+      --disabled-bg: #f0f0f0;
+      --hover-bg: #f9f9f9;
+    }
+
+    body.dark {
+      --bg: #1e1e1e;
+      --fg: #ffffff;
+      --accent: #6dbf4b;
+      --button-text: #ffffff;
+      --status-color: #6fdc80;
+      --border-color: #444444;
+      --disabled-bg: #2a2a2a;
+      --hover-bg: #333333;
+    }
+
+    body {
+      font-family: sans-serif;
+      padding: 15px;
+      width: 300px;
+      background-color: var(--bg);
+      color: var(--fg);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 0;
+      border-radius: 8px;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+
+    h3 .icon {
+      margin-right: 8px;
+      width: 20px;
+      height: 20px;
+    }
+
+    .control-group {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 500;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    .value {
+      float: right;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: var(--accent);
+      color: var(--button-text);
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button:hover {
+      filter: brightness(90%);
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    button .icon {
+      margin-right: 8px;
+      width: 16px;
+      height: 16px;
+    }
+
+    button:disabled {
+      background-color: var(--disabled-bg);
+      cursor: not-allowed;
+    }
+
+    #status {
+      font-size: 14px;
+      color: var(--status-color);
+      text-align: center;
+      margin-top: 10px;
+      min-height: 18px;
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: var(--hover-bg);
+      border-radius: 6px;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .toggle-slider {
+      background-color: var(--accent);
+    }
+
+    input:checked + .toggle-slider:before {
+      transform: translateX(20px);
+    }
+
+    .pronunciation-animation {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15px;
+      visibility: hidden;
+    }
+
+    .pronunciation-animation.active {
+      visibility: visible;
+    }
+
+    .bar {
+      width: 4px;
+      height: 15px;
+      margin: 0 2px;
+      background-color: var(--accent);
+      border-radius: 3px;
+      animation: soundWave 0.8s infinite ease-in-out;
+    }
+
+    .bar:nth-child(2) { animation-delay: 0.1s; }
+    .bar:nth-child(3) { animation-delay: 0.2s; }
+    .bar:nth-child(4) { animation-delay: 0.3s; }
+    .bar:nth-child(5) { animation-delay: 0.4s; }
+
+    @keyframes soundWave {
+      0% { height: 5px; }
+      50% { height: 20px; }
+      100% { height: 5px; }
+    }
+  </style>
+</head>
+<body>
+  <h3>
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M3 9v6h4l5 5V4L7 9H3z"></path>
+      <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"></path>
+      <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path>
+    </svg>
+    Tone Settings
+  </h3>
+
+  <div class="control-group">
+    <label>
+      Rate: <span id="rateVal" class="value">1.0</span>
+      <input type="range" id="rate" min="0.5" max="2.0" step="0.1" value="1.0">
+    </label>
+    <label>
+      Pitch: <span id="pitchVal" class="value">1.0</span>
+      <input type="range" id="pitch" min="0.0" max="2.0" step="0.1" value="1.0">
+    </label>
+
+    <div class="pronunciation-animation" id="speakingAnimation">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+
+  <button id="preview">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+    </svg>
+    Preview Voice
+  </button>
+  <button id="save">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+      <polyline points="17 21 17 13 7 13 7 21"></polyline>
+      <polyline points="7 3 7 8 15 8"></polyline>
+    </svg>
+    Save Settings
+  </button>
+
+  <div class="theme-toggle">
+    <span>Dark Mode</span>
+    <label class="toggle-switch">
+      <input type="checkbox" id="darkToggle">
+      <span class="toggle-slider"></span>
+    </label>
+  </div>
+
+  <p id="status"></p>
+  <script src="popup.js"></script>
+</body>
+</html>

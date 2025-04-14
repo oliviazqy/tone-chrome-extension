@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Tone - Pronounce Selected Text",
+  "version": "1.0",
+  "description": "Right-click to pronounce selected English text using American English TTS.",
+  "permissions": ["contextMenus", "tts", "scripting", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Tone Settings",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}
