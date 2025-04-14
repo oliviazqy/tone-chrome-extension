@@ -2,6 +2,27 @@
 
 A Chrome extension that allows users to highlight text on any webpage, right-click, and hear the American English pronunciation.
 
+## Why I Built This
+
+As language learners and educators often struggle with proper pronunciation of English words, I created Tone to provide:
+
+- **Seamless Learning Experience**: Learn correct American English pronunciation without leaving your browsing context
+- **Accessibility**: Help non-native speakers improve their pronunciation directly from any content they're reading
+- **Efficiency**: Eliminate the need to copy/paste text into separate pronunciation tools or dictionaries
+- **Simplicity**: Provide a clean, straightforward interface that doesn't interrupt the reading flow
+
+Whether you're studying English, preparing for a presentation, or simply unsure how to pronounce a particular word or phrase, Tone makes the learning process faster and more natural.
+
+### Personalized Pronunciation Experience
+
+Many pronunciation tools offer a one-size-fits-all approach, but Tone is different:
+
+- **Voice Preview**: Test voice settings before applying them to actual content, allowing users to find their ideal listening experience
+- **Customizable Speech Rate**: Adjust the speaking pace to match your learning needs - slower for beginners or faster for advanced learners
+- **Pitch Control**: Fine-tune the pitch to create a more comfortable and natural-sounding voice that suits your preferences
+
+These customization options make Tone particularly valuable for different types of language learners, educators, and those with specific auditory processing needs.
+
 ## Features
 - Right-click to pronounce selected text
 - Adjust speech rate and pitch via settings
