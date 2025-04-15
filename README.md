@@ -1,4 +1,4 @@
-# Tone - Pronounce Selected Text
+# Tone: A text to speech chrome extension
 
 A Chrome extension that allows users to highlight text on any webpage, right-click, and hear the American English pronunciation.
 
@@ -22,6 +22,15 @@ Many pronunciation tools offer a one-size-fits-all approach, but Tone is differe
 - **Pitch Control**: Fine-tune the pitch to create a more comfortable and natural-sounding voice that suits your preferences
 
 These customization options make Tone particularly valuable for different types of language learners, educators, and those with specific auditory processing needs.
+
+## Screenshots and recordings 
+- Screenshots:
+  <br><br>
+  <img width="300" alt="Screenshot 2025-04-15 at 11 11 09 PM" src="https://github.com/user-attachments/assets/93d30668-1ccb-4b0d-9271-0407d014f38b" />
+  <br><br>
+  <img width="300" alt="Screenshot 2025-04-15 at 11 11 32 PM" src="https://github.com/user-attachments/assets/95c4b898-63fa-47ce-83ea-2b96ec48199b" />
+  <br><br>
+- Recordings: https://www.loom.com/share/2f01e6066cc14643994415e43d8ffac9 
 
 ## Features
 - Right-click to pronounce selected text
