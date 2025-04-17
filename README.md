@@ -1,6 +1,6 @@
 # Tone: A text to speech chrome extension
 
-A Chrome extension that allows users to highlight text on any webpage, right-click, and hear the American English pronunciation.
+A text to speech chrome extension that allows users to highlight text on any webpage, right-click, and hear the American English pronunciation.
 
 ## Why I Built This
 
